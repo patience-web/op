@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>4、倍的认识</title>
+<style>
+body {
+background-image: url("995468f670f38685cdc6665efec59c0.jpg");
+background-repeat: no-repeat;
+background-attachment: fixed;
+background-position: center;
+background-size: cover;
+min-height: 100vh;
+}
+
+.element{
+bottom:0;
+right:0;
+position:fixed;
+}
+h1{
+color:#8A2BE2;
+}
+h2{
+color:#8A2BE2;
+}
+#top {
+width: 430px;
+height: 60px;
+margin: auto;
+background-color: ＃FA8072;
+border-radius: 10px 10px 0px 0px;
+}
+
+#calc-title {
+font-size: 50px;
+color: black;
+font-family:"华文楷体"
+text-align:center;
+margin: 10px 10px 0px 200px;
+}
+
+#result {
+width: 445px;
+height: 60px;
+margin: auto;
+font-size: 40px;
+background-color: white;
+border: solid 3px #4278bb;
+}
+
+#button {
+width: 450px;
+height: 422px;
+background-color: #4278bb;
+margin: auto;
+}
+#button div {
+width: 108px;
+height: 80px;
+float: left;
+background-color: #7ecbff;
+margin: 2px;
+line-height: 80px;
+text-align: center;
+font-size: 26px;
+}
+#button div:hover {
+background-color: rgb(48, 149, 203);
+}
+</style>
+<script type="text/javascript">
+
+function clickNumber(number) {
+var result = document.getElementById("result");
+result.innerHTML = result.innerHTML + number;
+}
+
+function clickOperator(operator) {
+var result = document.getElementById("result");
+var string = result.innerHTML;
+var len = string.length;
+var last = string.charAt(len - 1);
+if (last == "+" || last == "-" || last == "*" || last == "/" || last == "%") {
+var temp = string.substr(0, len - 1) + operator;
+result.innerHTML = temp;
+} else {
+result.innerHTML += operator;
+}
+}
+
+function clickPonit() {
+var result = document.getElementById("result");
+var string = result.innerHTML;
+var len = string.length;
+var last = string.charAt(len - 1);
+if (last !== ".") {
+result.innerHTML = result.innerHTML + ".";
+} else {
+result.innerHTML = result.innerHTML;
+}
+}
+
+function clearresult() {
+var result = document.getElementById("result");
+result.innerHTML = "";
+}
+
+function del() {
+var result = document.getElementById("result");
+var string = result.innerHTML;
+if (string.length > 0) {
+result.innerHTML = string.slice(0, -1);
+}
+}
+
+function doCalc() {
+var result = document.getElementById("result");
+var expression = result.innerHTML;
+result.innerHTML = eval(expression);
+}
+</script>
+</head>
+<body>
+
+<div id="top">
+<div id="calc-title">计算器</div>
+</div>
+<div id="result"></div>
+<div id="button">
+<div onclick="clearresult()">AC</div>
+<div onclick="clickOperator('/')">÷</div>
+<div onclick="clickOperator('*')">x</div>
+<div onclick="del()">删除</div>
+<div onclick="clickNumber(7)">7</div>
+<div onclick="clickNumber(8)">8</div>
+<div onclick="clickNumber(9)">9</div>
+<div onclick="clickOperator('%')">%</div>
+<div onclick="clickNumber(4)">4</div>
+<div onclick="clickNumber(5)">5</div>
+<div onclick="clickNumber(6)">6</div>
+<div onclick="clickOperator('-')">-</div>
+<div onclick="clickNumber(1)">1</div>
+<div onclick="clickNumber(2)">2</div>
+<div onclick="clickNumber(3)">3</div>
+<div onclick="clickOperator('+')">+</div>
+<div></div>
+<div onclick="clickNumber(0)">0</div>
+<div onclick="clickPonit()">.</div>
+<div onclick="doCalc()">=</div>
+</div>
+<div style="font-size:20px;">
+<div style="text-align:center; ">
+<h1> &uarr;</h1>
+ <h2> 可用此计算器完成加减法等操作</h2>
+</div>
+
+<p style="color:red;">AC为一键清除</p>
+<p style="color:green;">+为加法运算</p>
+<p style="color:blue;">-为减法运算</p>
+<p style="color:purple;">%为取余运算</p>
+<p style="color:gray;">*为乘法运算</p>
+<p style="color:orange;">÷为除法运算</P>
+</div>
+<div class="element" style="padding:40px;text-align:center;font-size:20px; border-style:outset; ">
+  
+  <a href="https://patience-web.github.io/op/lzc%E7%9A%84%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99.html">我的个人网站  &larr;(点击进入)</a>
+
+</div>
+
+
+</body>
+</html>
