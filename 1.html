@@ -60,7 +60,7 @@ ctx.save();
 ctx.drawImage(clockImage, 0, 0, 500, 500);
 ctx.translate(canvas.width / 2, canvas.height / 2);
 
-// Draw numbers
+
 ctx.font = '36px Arial';
 ctx.fillStyle = '#000';
 ctx.textAlign = 'center';
@@ -72,7 +72,7 @@ var y = clockRadius * 0.7 * Math.sin(theta);
 ctx.fillText(n, x, y);
 }
 
-// Draw hour hand
+
 ctx.save();
 var theta = (hour - 3) * 2 * Math.PI / 12;
 ctx.rotate(theta);
@@ -85,7 +85,7 @@ ctx.fillStyle = '#0ff';
 ctx.fill();
 ctx.restore();
 
-// Draw minute hand
+
 ctx.save();
 var theta = (minute - 15) * 2 * Math.PI / 60;
 ctx.rotate(theta);
@@ -98,7 +98,7 @@ ctx.fillStyle = '#f0f';
 ctx.fill();
 ctx.restore();
 
-// Draw second hand
+
 ctx.save();
 var theta = (seconds - 15) * 2 * Math.PI / 60;
 ctx.rotate(theta);
@@ -121,7 +121,7 @@ ctx = canvas.getContext('2d');
 clockImage = new Image();
 clockImage.src = 'https://static.jyshare.com/images/mix/125855_nnla_89964.png';
 
-setInterval(drawScene, 1000); // loop drawScene
+setInterval(drawScene, 1000); 
 }
 </script>
 <div>
