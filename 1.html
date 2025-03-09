@@ -32,6 +32,13 @@ text-transform: uppercase;
 }
 
 </style>
+
+</head>
+<body >
+<header style="text-align:center; font-size:35px;"><h2>时钟</h2></header>
+<div class="clocks">
+<canvas id="canvas" width="500" height="500"></canvas>
+</div>
   <script>
 var canvas, ctx, clockRadius = 250, clockImage;
 
@@ -117,14 +124,7 @@ clockImage.src = 'https://static.jyshare.com/images/mix/125855_nnla_89964.png';
 setInterval(drawScene, 1000); 
 }
 </script>
-</head>
-<body >
-<header style="text-align:center; font-size:35px;"><h2>时钟</h2></header>
-<div class="clocks">
-<canvas id="canvas" width="500" height="500"></canvas>
-</div>
-
-
+<input type="file" id="fileInput">
 <div>
 <p style="font-color:#0f0;">绿色为秒针，转动一下为一秒钟。</p>
 <h2 style="font-color:#f0f;">紫色为分针，转动一下为一分钟。</h2>
